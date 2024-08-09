@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import ContactRow from "./ContactRow";
 
-function ContactList({ contacts }){
+function ContactList({setSelectedContactId, contacts }){
     return ( 
         <table>
           <thead>
@@ -16,7 +17,7 @@ function ContactList({ contacts }){
             </tr>
             {
                contacts.map((thisContact) => {
-                return <ContactRow key={thisContact.Id} contact={thisContact}/>;
+                return <ContactRow key={thisContact.Id} setSelectedContactId={setSelectedContactId} contact={thisContact}/>;
                })
              }
           </tbody>
